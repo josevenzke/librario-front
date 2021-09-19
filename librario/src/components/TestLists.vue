@@ -23,7 +23,7 @@ export default {
         async teste(){
             let config = {
                 headers: {
-                    Authorization: 'Token d3e6a85d4b10ec2940821d7c41c52859ac6b3f82',
+                    Authorization: process.env.VUE_APP_API_KEY,
                 }
             }
 
