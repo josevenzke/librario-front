@@ -1,5 +1,11 @@
 <template>
     <div>
+        <h1>Login:</h1>
+        <input v-model="login" type="text">
+        <input v-model="senha" type="text">
+
+        <button @click="login()">Login</button>
+
         <h1>Livros:</h1>
         <ul>
             <li v-for="book in booksList" :key="book">{{book}}</li>
@@ -13,13 +19,18 @@ export default {
     name:'Test',
     data(){
         return{
-            booksList: false
+            booksList: false,
+            login: '',
+            senha:'',
         }
     },
     mounted(){
       this.teste()  
     },
     methods:{
+        async login(){
+            const x = await axios.post('http://127.0.0.1:8000/api-token/',{})
+        }
         async teste(){
             let config = {
                 headers: {
