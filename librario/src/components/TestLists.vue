@@ -6,7 +6,7 @@
 
         <button @click="loginToken()">Login</button>
 
-        <h1>Livros:</h1>
+        <h1>Livros:</h1><button @click="teste()">Mostrar</button>
         <ul>
             <li v-for="book in booksList" :key="book">{{book}}</li>
         </ul>
@@ -22,20 +22,20 @@ export default {
             booksList: false,
             login: '',
             senha:'',
+            userToken: false,
         }
     },
-    mounted(){
-      this.teste()  
-    },
+
     methods:{
         async loginToken(){
             const x = await axios.post('http://127.0.0.1:8000/api-token/',{username:this.login, password:this.senha})
             console.log(x)
+            this.userToken = x.data.token
         },
         async teste(){
             let config = {
                 headers: {
-                    Authorization: process.env.VUE_APP_API_KEY,
+                    Authorization: `Token ${this.userToken}`,
                 }
             }
 
