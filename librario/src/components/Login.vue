@@ -16,15 +16,15 @@ export default {
         return{
             login: '',
             senha:'',
-            userToken: false,
         }
     },
 
     methods:{
         async loginToken(){
-            const x = await axios.post('http://127.0.0.1:8000/api-token/',{username:this.login, password:this.senha})
+            const x = await axios.post('http://127.0.0.1:8000/token/',{username:this.login, password:this.senha})
             console.log(x)
-            this.userToken = x.data.token
+            this.$store.state.token = x.data.access
+            console.log(this.$store.state.token,'a')
         },
     }
 }
