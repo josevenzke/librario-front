@@ -28,14 +28,14 @@ export default {
 
     methods:{
         async loginToken(){
-            const x = await axios.post('http://127.0.0.1:8000/api-token/',{username:this.login, password:this.senha})
+            const x = await axios.post('http://127.0.0.1:8000/api/token/',{username:this.login, password:this.senha})
             console.log(x)
-            this.userToken = x.data.token
+            this.userToken = x.data.access
         },
         async teste(){
             let config = {
                 headers: {
-                    Authorization: `Token ${this.userToken}`,
+                    Authorization: `Bearer ${this.userToken}`,
                 }
             }
 
