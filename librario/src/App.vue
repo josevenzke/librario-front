@@ -1,14 +1,14 @@
 <template>
-  <TestLists />
+  <Login />
 </template>
 
 <script>
-import TestLists from './components/TestLists.vue'
+import Login from './components/Login.vue'
 
 export default {
   name: 'App',
   components: {
-    TestLists
+    Login
   }
 }
 </script>
