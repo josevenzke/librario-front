@@ -21,7 +21,7 @@ export default {
         async teste(){
             let config = {
                 headers: {
-                    Authorization: `Bearer ${this.userToken}`,
+                    Authorization: `Bearer ${this.$store.state.token}`,
                 }
             }
 
