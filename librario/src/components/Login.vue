@@ -24,7 +24,7 @@ export default {
             const x = await axios.post('http://127.0.0.1:8000/api/token/',{username:this.login, password:this.senha})
             console.log(x)
             this.$store.state.token = x.data.access
-            this.$router.push({ path: 'test' })
+            this.$router.push({ path: '/' })
         },
     }
 }
