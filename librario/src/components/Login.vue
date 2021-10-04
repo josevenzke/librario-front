@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="panel">
         <h1>Login:</h1>
         <input v-model="login" type="text">
         <input v-model="senha" type="text">
@@ -31,5 +31,11 @@ export default {
 </script>
 
 <style>
+.panel{
 
+    width: 250px;
+    background-color: blue;
+    margin: auto;
+    margin-top: 200px;
+}
 </style>
