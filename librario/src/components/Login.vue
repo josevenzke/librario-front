@@ -1,10 +1,15 @@
 <template>
     <div class="panel">
-        <h1>Login:</h1>
-        <input v-model="login" type="text">
-        <input v-model="senha" type="text">
-
-        <button @click="loginToken()">Login</button>
+        <div>
+            <h1 style="margin-top:40px;">Librario</h1>
+        </div>
+        <div class="inputs">
+            <input v-model="username" type="text">
+            <input v-model="senha" type="text">
+        </div>
+        <div>
+            <button @click="login()">Login</button>
+        </div>
     </div>
 </template>
 
@@ -14,14 +19,14 @@ export default {
     name:'Test',
     data(){
         return{
-            login: '',
+            username: '',
             senha:'',
         }
     },
 
     methods:{
-        async loginToken(){
-            const x = await axios.post('http://127.0.0.1:8000/api/token/',{username:this.login, password:this.senha})
+        async login(){
+            const x = await axios.post('http://127.0.0.1:8000/api/token/',{username:this.username, password:this.senha})
             console.log(x)
             this.$store.state.token = x.data.access
             this.$router.push({ path: '/' })
@@ -32,10 +37,18 @@ export default {
 
 <style>
 .panel{
-
-    width: 250px;
+    width: 300px;
+    height: 250px;
     background-color: blue;
     margin: auto;
     margin-top: 200px;
+}
+
+.panel>div{
+    margin-top:30px;
+}
+
+.inputs>input{
+    margin-bottom: 10px;
 }
 </style>
