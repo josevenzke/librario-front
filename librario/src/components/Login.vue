@@ -1,20 +1,22 @@
 <template>
-    <div class="panel">
-        <div>
-            <h1 style="margin-top:40px;">Librario</h1>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Featured
         </div>
-        <div class="inputs">
-            <input v-model="username" type="text">
-            <input v-model="senha" type="text">
-        </div>
-        <div>
-            <button @click="login()">Login</button>
+        <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
     </div>
+</div>
 </template>
 
 <script>
 import axios from 'axios'
+import "bootstrap/dist/css/bootstrap.min.css";
+
 export default {
     name:'Test',
     data(){
@@ -36,19 +38,5 @@ export default {
 </script>
 
 <style>
-.panel{
-    width: 300px;
-    height: 250px;
-    background-color: blue;
-    margin: auto;
-    margin-top: 200px;
-}
 
-.panel>div{
-    margin-top:30px;
-}
-
-.inputs>input{
-    margin-bottom: 10px;
-}
 </style>
